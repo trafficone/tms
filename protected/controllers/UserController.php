@@ -7,26 +7,6 @@ class UserController extends Controller{
     );
   }
 
-  public function accessRules()
-        {
-                return array(
-                        array('allow',  // allow all users to perform 'index' and 'view' actions
-                                'actions'=>array('create','new','verify'),
-                                'users'=>array('*'),
-                        ),
-                        array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                                'actions'=>array('profile','update'),
-                                'users'=>array('@'),
-                        ),
-                        array('allow', // allow admin user to perform 'admin' and 'delete' actions
-                                'actions'=>array('admin'),
-                                'users'=>array('trafficone'),
-                        ),
-                        array('deny',  // deny all users
-                                'users'=>array('*'),
-                        ),
-                );
-        }
   
   public function actions(){
     return array(
@@ -81,18 +61,6 @@ class UserController extends Controller{
         echo "User Saved";
       }
     }
-  }
-  public function actionProfile(){
-    $this->render('profile');
-  }
-  public function actionNew()
-  {
-    $this->render('new');
-        Yii::app()->user->setFlash('new','Thank you for creating your account. We will send you an email to verify your account shortly.');
-        $this->refresh();
-      }
-    }
-    $this->render('new',array('model'=>$user));
   }
   public function actionVerify()
   {
