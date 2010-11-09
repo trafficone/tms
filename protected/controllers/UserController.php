@@ -28,7 +28,45 @@ class UserController extends Controller{
                 );
         }
   
-  public function actionCreate()
+  public function actions(){
+    return array(
+      // captcha action renders the CAPTCHA image displayed on the contact page
+      'captcha'=>array(
+        'class'=>'CCaptchaAction',
+        'backColor'=>0xFFFFFF,
+      ),
+			// page action renders "static" pages stored under 'protected/views/site/pages'
+			// They can be accessed via: index.php?r=site/page&view=FileName
+			'page'=>array(
+				'class'=>'CViewAction',
+			)
+    );
+  }
+  public function accessRules()
+  {
+    return array(
+      array('allow',  // allow all users to perform 'index' and 'view' actions
+        'actions'=>array('create','new','verify','captcha'),
+        'users'=>array('*'),
+      ),
+      array('allow', // allow authenticated user to perform 'create' and 'update' actions
+        'actions'=>array('profile','update'),
+        'users'=>array('@'),
+      ),
+      array('allow', // allow admin user to perform 'admin' and 'delete' actions
+        'actions'=>array('admin'),
+        'users'=>array('trafficone'),
+      ),
+      array('deny',  // deny all users
+        'users'=>array('*'),
+      ),
+    );
+  }
+  
+  public function actionProfile(){
+    $this->render('profile');
+  }
+  public function actionNew()
   {
     $user = new User();
 
@@ -50,6 +88,11 @@ class UserController extends Controller{
   public function actionNew()
   {
     $this->render('new');
+        Yii::app()->user->setFlash('new','Thank you for creating your account. We will send you an email to verify your account shortly.');
+        $this->refresh();
+      }
+    }
+    $this->render('new',array('model'=>$user));
   }
   public function actionVerify()
   {
