@@ -8,6 +8,7 @@
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
 	<?php echo $form->errorSummary($model); ?>
+</div>
 	<?php /*
 	//<!-- this field is automatically populated --> 
 	<div class="row">
