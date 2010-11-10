@@ -6,6 +6,8 @@ class UserController extends Controller{
       'accessControl', // perform access control for CRUD operations
     );
   }
+
+  
   public function actions(){
     return array(
       // captcha action renders the CAPTCHA image displayed on the contact page
@@ -56,11 +58,9 @@ class UserController extends Controller{
       );
       $user->attributes=$attributes;
       if($user->save()){
-        Yii::app()->user->setFlash('new','Thank you for creating your account. We will send you an email to verify your account shortly.');
-        $this->refresh();
+        echo "User Saved";
       }
     }
-    $this->render('new',array('model'=>$user));
   }
   public function actionVerify()
   {
