@@ -13,7 +13,7 @@ $this->breadcrumbs=array(
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'login-form',
 	'enableAjaxValidation'=>false,
-	//'onsubmit'=>'document.login-form.password = rstr_md5(\"rocksalt\"+document.login-form.password); alert(password);'
+	'clientOptions'=>'beforeValidate'
 )); ?>
 
 	<p class="note">Fields <span class="required"></span>required.</p>
@@ -40,6 +40,11 @@ $this->breadcrumbs=array(
 		<?php echo CHtml::submitButton('Login'); ?>
                 <a href="<?php echo $this->createUrl('user/new');?>">New?</a>
 	</div>
-
+<script language='javascript'>
+ var beforeValidate=function(form){
+	 document.login-form.password = $.md5("rocksalt"+document.login-form.password);
+   return true;
+ }
+</script>
 <?php $this->endWidget(); ?>
 </div><!-- form -->

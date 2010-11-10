@@ -7,19 +7,22 @@
 <form id="createUser">
   <table style="width:300px;">
     <tr>
-      <td>username:</td>
+      <td>Username:</td>
       <td><input type="text" name="username" /></td>
     </tr><tr>
-      <td>password:</td>
+      <td>Password:</td>
       <td><input type="password" name="user_pass" id="pass" /></td>
     </tr><tr>
       <td>Retype:</td>
       <td><input type="password" id="pass_verify" /></td>
     </tr><tr>
       <td>Email:</td>
-      <td><input type="text" name="user_email" />(don't worry, we won't sell it to pirates)</td> 
-    </tr><tr colspan="2">
-      <td>I have read the <a href="<?php echo $this->createUrl('site/toc'); ?>">Terms and Conditions</a>
+      <td>
+        <input type="text" name="user_email" />
+        <p>(don't worry, we won't sell it to pirates)</p>
+      </td> 
+    </tr><tr>
+      <td colspan="2">I have read the <a href="<?php echo $this->createUrl('site/toc'); ?>">Terms and Conditions</a>
             <input type="checkbox" id="toc" /></td>
     </tr>
   </table>
@@ -51,15 +54,22 @@
       alert($("#toc").val());
       if($("#pass").val()!=$("#pass_verify").val()){
         $("#dg_message").html('Your passwords do not match');
+        $("#dialog").dialog("show");
+        return false;
+      } else if($("#toc").val()!='checked'){
+    	  $("#dg_message").html('Please read and agree to the Terms and Conditions');
+        $("#dialog").dialog("show");
+        return false;
+      } else {
+    	  $("#pass").val($.md5('rocksalt'+$("#pass").val()));
+    	  alert($("#pass").val());
+        $.post("<?php echo $this->createUrl('user/create'); ?>",
+          $("#createUser").serialize(),
+          function(data){
+            $("#inputs").html('User Created, however, you'll have to verify before you are able to login')
+          }
+        );
         return false;
       }
-      //if($("#toc").val()!='checked'){
-        
-      $.post("<?php echo $this.createUrl('user/create'); ?>",
-        $("#createUser").serialize(),
-        function(data){
-          $("#inputs").html('User Created, however, you'll have to verify before you are able to login')
-        }
-      );
-  }) 
+  }); 
 </script>

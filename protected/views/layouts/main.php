@@ -53,5 +53,6 @@
 
 </div><!-- page -->
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-ui-1.8.custom.min.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.md5.js"></script>
 </body>
 </html>
