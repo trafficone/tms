@@ -1042,3 +1042,26 @@ REQUEST_URI=/index.php/user/new
 in /home/trafficone/public_html/protected/views/user/new.php (26)
 in /home/trafficone/public_html/protected/controllers/UserController.php (52)
 in /home/trafficone/public_html/index.php (14)
+2010/11/09 23:30:37 [error] [system.db.CDbCommand] Error in querying SQL: SHOW COLUMNS FROM `user`
+in C:\Documents and Settings\User\workspace\tms\protected\controllers\UserController.php (51)
+in C:\Documents and Settings\User\workspace\tms\index.php (14)
+2010/11/09 23:30:37 [error] [exception.CDbException] exception 'CDbException' with message 'The table "user" for active record class "User" cannot be found in the database.' in C:\Documents and Settings\User\workspace\yii\db\ar\CActiveRecord.php:2159
+Stack trace:
+#0 C:\Documents and Settings\User\workspace\yii\db\ar\CActiveRecord.php(353): CActiveRecordMetaData->__construct(Object(User))
+#1 C:\Documents and Settings\User\workspace\yii\db\ar\CActiveRecord.php(367): CActiveRecord::model('User')
+#2 C:\Documents and Settings\User\workspace\yii\db\ar\CActiveRecord.php(62): CActiveRecord->getMetaData()
+#3 C:\Documents and Settings\User\workspace\tms\protected\controllers\UserController.php(51): CActiveRecord->__construct()
+#4 C:\Documents and Settings\User\workspace\yii\web\actions\CInlineAction.php(50): UserController->actionNew()
+#5 C:\Documents and Settings\User\workspace\yii\web\CController.php(300): CInlineAction->run()
+#6 C:\Documents and Settings\User\workspace\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 C:\Documents and Settings\User\workspace\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#8 C:\Documents and Settings\User\workspace\yii\web\CController.php(1049): CFilter->filter(Object(CFilterChain))
+#9 C:\Documents and Settings\User\workspace\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 C:\Documents and Settings\User\workspace\yii\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\Documents and Settings\User\workspace\yii\web\CController.php(283): CFilterChain->run()
+#12 C:\Documents and Settings\User\workspace\yii\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\Documents and Settings\User\workspace\yii\web\CWebApplication.php(324): CController->run('new')
+#14 C:\Documents and Settings\User\workspace\yii\web\CWebApplication.php(121): CWebApplication->runController('user/new')
+#15 C:\Documents and Settings\User\workspace\yii\base\CApplication.php(135): CWebApplication->processRequest()
+#16 C:\Documents and Settings\User\workspace\tms\index.php(14): CApplication->run()
+#17 {main} REQUEST_URI=/index.php/user/new
