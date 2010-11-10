@@ -1042,3 +1042,125 @@ REQUEST_URI=/index.php/user/new
 in /home/trafficone/public_html/protected/views/user/new.php (26)
 in /home/trafficone/public_html/protected/controllers/UserController.php (52)
 in /home/trafficone/public_html/index.php (14)
+2010/11/09 17:27:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/custom_theme/jquery-ui-1.8.6.custom.css".' in /home/trafficone/yii-1.1.4.r2429/framework/web/CWebApplication.php:328
+Stack trace:
+#0 /home/trafficone/yii-1.1.4.r2429/framework/web/CWebApplication.php(121): CWebApplication->runController('css/custom_them...')
+#1 /home/trafficone/yii-1.1.4.r2429/framework/base/CApplication.php(135): CWebApplication->processRequest()
+#2 /home/trafficone/public_html/index.php(14): CApplication->run()
+#3 {main} REQUEST_URI=/css/custom_theme/jquery-ui-1.8.6.custom.css
+2010/11/09 17:27:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/jquery-ui-1.8.custom.min.js".' in /home/trafficone/yii-1.1.4.r2429/framework/web/CWebApplication.php:328
+Stack trace:
+#0 /home/trafficone/yii-1.1.4.r2429/framework/web/CWebApplication.php(121): CWebApplication->runController('js/jquery-ui-1....')
+#1 /home/trafficone/yii-1.1.4.r2429/framework/base/CApplication.php(135): CWebApplication->processRequest()
+#2 /home/trafficone/public_html/index.php(14): CApplication->run()
+#3 {main} REQUEST_URI=/js/jquery-ui-1.8.custom.min.js
+2010/11/09 17:27:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/custom_theme/jquery-ui-1.8.6.custom.css".' in /home/trafficone/yii-1.1.4.r2429/framework/web/CWebApplication.php:328
+Stack trace:
+#0 /home/trafficone/yii-1.1.4.r2429/framework/web/CWebApplication.php(121): CWebApplication->runController('css/custom_them...')
+#1 /home/trafficone/yii-1.1.4.r2429/framework/base/CApplication.php(135): CWebApplication->processRequest()
+#2 /home/trafficone/public_html/index.php(14): CApplication->run()
+#3 {main} REQUEST_URI=/css/custom_theme/jquery-ui-1.8.6.custom.css
+2010/11/09 17:27:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/jquery-ui-1.8.custom.min.js".' in /home/trafficone/yii-1.1.4.r2429/framework/web/CWebApplication.php:328
+Stack trace:
+#0 /home/trafficone/yii-1.1.4.r2429/framework/web/CWebApplication.php(121): CWebApplication->runController('js/jquery-ui-1....')
+#1 /home/trafficone/yii-1.1.4.r2429/framework/base/CApplication.php(135): CWebApplication->processRequest()
+#2 /home/trafficone/public_html/index.php(14): CApplication->run()
+#3 {main} REQUEST_URI=/js/jquery-ui-1.8.custom.min.js
+2010/11/09 17:27:16 [error] [php] Undefined variable: form (/home/trafficone/public_html/protected/views/user/new.php:26)
+Stack trace:
+#0 /home/trafficone/yii-1.1.4.r2429/framework/web/CController.php(798): UserController->renderFile()
+#1 /home/trafficone/yii-1.1.4.r2429/framework/web/CController.php(739): UserController->renderPartial()
+#2 /home/trafficone/public_html/protected/controllers/UserController.php(52): UserController->render()
+#3 /home/trafficone/yii-1.1.4.r2429/framework/web/actions/CInlineAction.php(50): UserController->actionNew()
+#4 /home/trafficone/yii-1.1.4.r2429/framework/web/CController.php(300): CInlineAction->run()
+#5 /home/trafficone/yii-1.1.4.r2429/framework/web/filters/CFilterChain.php(133): UserController->runAction()
+#6 /home/trafficone/yii-1.1.4.r2429/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /home/trafficone/yii-1.1.4.r2429/framework/web/CController.php(1049): CAccessControlFilter->filter()
+#8 /home/trafficone/yii-1.1.4.r2429/framework/web/filters/CInlineFilter.php(59): UserController->filterAccessControl()
+#9 /home/trafficone/yii-1.1.4.r2429/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /home/trafficone/yii-1.1.4.r2429/framework/web/CController.php(283): CFilterChain->run()
+#11 /home/trafficone/yii-1.1.4.r2429/framework/web/CController.php(257): UserController->runActionWithFilters()
+#12 /home/trafficone/yii-1.1.4.r2429/framework/web/CWebApplication.php(324): UserController->run()
+#13 /home/trafficone/yii-1.1.4.r2429/framework/web/CWebApplication.php(121): CWebApplication->runController()
+#14 /home/trafficone/yii-1.1.4.r2429/framework/base/CApplication.php(135): CWebApplication->processRequest()
+#15 /home/trafficone/public_html/index.php(14): CWebApplication->run()
+REQUEST_URI=/index.php/user/new
+in /home/trafficone/public_html/protected/views/user/new.php (26)
+in /home/trafficone/public_html/protected/controllers/UserController.php (52)
+in /home/trafficone/public_html/index.php (14)
+2010/11/09 17:29:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /home/trafficone/yii-1.1.4.r2429/framework/web/CWebApplication.php:328
+Stack trace:
+#0 /home/trafficone/yii-1.1.4.r2429/framework/web/CWebApplication.php(121): CWebApplication->runController('robots.txt')
+#1 /home/trafficone/yii-1.1.4.r2429/framework/base/CApplication.php(135): CWebApplication->processRequest()
+#2 /home/trafficone/public_html/index.php(14): CApplication->run()
+#3 {main} REQUEST_URI=/robots.txt
+2010/11/09 17:29:43 [error] [php] Undefined variable: form (/home/trafficone/public_html/protected/views/user/new.php:26)
+Stack trace:
+#0 /home/trafficone/yii-1.1.4.r2429/framework/web/CController.php(798): UserController->renderFile()
+#1 /home/trafficone/yii-1.1.4.r2429/framework/web/CController.php(739): UserController->renderPartial()
+#2 /home/trafficone/public_html/protected/controllers/UserController.php(52): UserController->render()
+#3 /home/trafficone/yii-1.1.4.r2429/framework/web/actions/CInlineAction.php(50): UserController->actionNew()
+#4 /home/trafficone/yii-1.1.4.r2429/framework/web/CController.php(300): CInlineAction->run()
+#5 /home/trafficone/yii-1.1.4.r2429/framework/web/filters/CFilterChain.php(133): UserController->runAction()
+#6 /home/trafficone/yii-1.1.4.r2429/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /home/trafficone/yii-1.1.4.r2429/framework/web/CController.php(1049): CAccessControlFilter->filter()
+#8 /home/trafficone/yii-1.1.4.r2429/framework/web/filters/CInlineFilter.php(59): UserController->filterAccessControl()
+#9 /home/trafficone/yii-1.1.4.r2429/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /home/trafficone/yii-1.1.4.r2429/framework/web/CController.php(283): CFilterChain->run()
+#11 /home/trafficone/yii-1.1.4.r2429/framework/web/CController.php(257): UserController->runActionWithFilters()
+#12 /home/trafficone/yii-1.1.4.r2429/framework/web/CWebApplication.php(324): UserController->run()
+#13 /home/trafficone/yii-1.1.4.r2429/framework/web/CWebApplication.php(121): CWebApplication->runController()
+#14 /home/trafficone/yii-1.1.4.r2429/framework/base/CApplication.php(135): CWebApplication->processRequest()
+#15 /home/trafficone/public_html/index.php(14): CWebApplication->run()
+REQUEST_URI=/index.php/user/new
+in /home/trafficone/public_html/protected/views/user/new.php (26)
+in /home/trafficone/public_html/protected/controllers/UserController.php (52)
+in /home/trafficone/public_html/index.php (14)
+2010/11/09 18:16:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/custom_theme/jquery-ui-1.8.6.custom.css".' in /home/trafficone/yii-1.1.4.r2429/framework/web/CWebApplication.php:328
+Stack trace:
+#0 /home/trafficone/yii-1.1.4.r2429/framework/web/CWebApplication.php(121): CWebApplication->runController('css/custom_them...')
+#1 /home/trafficone/yii-1.1.4.r2429/framework/base/CApplication.php(135): CWebApplication->processRequest()
+#2 /home/trafficone/public_html/index.php(14): CApplication->run()
+#3 {main} REQUEST_URI=/css/custom_theme/jquery-ui-1.8.6.custom.css
+2010/11/09 18:16:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/jquery-ui-1.8.custom.min.js".' in /home/trafficone/yii-1.1.4.r2429/framework/web/CWebApplication.php:328
+Stack trace:
+#0 /home/trafficone/yii-1.1.4.r2429/framework/web/CWebApplication.php(121): CWebApplication->runController('js/jquery-ui-1....')
+#1 /home/trafficone/yii-1.1.4.r2429/framework/base/CApplication.php(135): CWebApplication->processRequest()
+#2 /home/trafficone/public_html/index.php(14): CApplication->run()
+#3 {main} REQUEST_URI=/js/jquery-ui-1.8.custom.min.js
+2010/11/09 18:16:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/custom_theme/jquery-ui-1.8.6.custom.css".' in /home/trafficone/yii-1.1.4.r2429/framework/web/CWebApplication.php:328
+Stack trace:
+#0 /home/trafficone/yii-1.1.4.r2429/framework/web/CWebApplication.php(121): CWebApplication->runController('css/custom_them...')
+#1 /home/trafficone/yii-1.1.4.r2429/framework/base/CApplication.php(135): CWebApplication->processRequest()
+#2 /home/trafficone/public_html/index.php(14): CApplication->run()
+#3 {main} REQUEST_URI=/css/custom_theme/jquery-ui-1.8.6.custom.css
+2010/11/09 18:16:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/jquery-ui-1.8.custom.min.js".' in /home/trafficone/yii-1.1.4.r2429/framework/web/CWebApplication.php:328
+Stack trace:
+#0 /home/trafficone/yii-1.1.4.r2429/framework/web/CWebApplication.php(121): CWebApplication->runController('js/jquery-ui-1....')
+#1 /home/trafficone/yii-1.1.4.r2429/framework/base/CApplication.php(135): CWebApplication->processRequest()
+#2 /home/trafficone/public_html/index.php(14): CApplication->run()
+#3 {main} REQUEST_URI=/js/jquery-ui-1.8.custom.min.js
+2010/11/09 18:45:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/custom_theme/jquery-ui-1.8.6.custom.css".' in /home/trafficone/yii-1.1.4.r2429/framework/web/CWebApplication.php:328
+Stack trace:
+#0 /home/trafficone/yii-1.1.4.r2429/framework/web/CWebApplication.php(121): CWebApplication->runController('css/custom_them...')
+#1 /home/trafficone/yii-1.1.4.r2429/framework/base/CApplication.php(135): CWebApplication->processRequest()
+#2 /home/trafficone/public_html/index.php(14): CApplication->run()
+#3 {main} REQUEST_URI=/css/custom_theme/jquery-ui-1.8.6.custom.css
+2010/11/09 18:45:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/jquery-ui-1.8.custom.min.js".' in /home/trafficone/yii-1.1.4.r2429/framework/web/CWebApplication.php:328
+Stack trace:
+#0 /home/trafficone/yii-1.1.4.r2429/framework/web/CWebApplication.php(121): CWebApplication->runController('js/jquery-ui-1....')
+#1 /home/trafficone/yii-1.1.4.r2429/framework/base/CApplication.php(135): CWebApplication->processRequest()
+#2 /home/trafficone/public_html/index.php(14): CApplication->run()
+#3 {main} REQUEST_URI=/js/jquery-ui-1.8.custom.min.js
+2010/11/09 18:45:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/custom_theme/jquery-ui-1.8.6.custom.css".' in /home/trafficone/yii-1.1.4.r2429/framework/web/CWebApplication.php:328
+Stack trace:
+#0 /home/trafficone/yii-1.1.4.r2429/framework/web/CWebApplication.php(121): CWebApplication->runController('css/custom_them...')
+#1 /home/trafficone/yii-1.1.4.r2429/framework/base/CApplication.php(135): CWebApplication->processRequest()
+#2 /home/trafficone/public_html/index.php(14): CApplication->run()
+#3 {main} REQUEST_URI=/css/custom_theme/jquery-ui-1.8.6.custom.css
+2010/11/09 18:45:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/jquery-ui-1.8.custom.min.js".' in /home/trafficone/yii-1.1.4.r2429/framework/web/CWebApplication.php:328
+Stack trace:
+#0 /home/trafficone/yii-1.1.4.r2429/framework/web/CWebApplication.php(121): CWebApplication->runController('js/jquery-ui-1....')
+#1 /home/trafficone/yii-1.1.4.r2429/framework/base/CApplication.php(135): CWebApplication->processRequest()
+#2 /home/trafficone/public_html/index.php(14): CApplication->run()
+#3 {main} REQUEST_URI=/js/jquery-ui-1.8.custom.min.js
