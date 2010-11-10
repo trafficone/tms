@@ -18,15 +18,15 @@
     </tr><tr>
       <td>Email:</td>
       <td><input type="text" name="user_email" />(don't worry, we won't sell it to pirates)</td> 
-    </tr><tr colspan="2">
+    </tr><tr >
       <td>I have read the <a href="<?php echo $this->createUrl('site/toc'); ?>">Terms and Conditions</a>
             <input type="checkbox" id="toc" /></td>
     </tr>
   </table>
-  <?php echo $form->labelEx($model,'verifyCode'); ?>
+  Are you Human?
                 <div>
                 <?php $this->widget('CCaptcha'); ?>
-                <?php echo $form->textField($model,'verifyCode'); ?>
+                <input type='text' name='verifyCode' />
                 </div>
                 <div class="hint">Please enter the letters as they are shown in the image above.
                 <br/>Letters are not case-sensitive.</div>
