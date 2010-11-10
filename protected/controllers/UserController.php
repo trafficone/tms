@@ -1,6 +1,6 @@
 <?php
 class UserController extends Controller{
-
+  public $layout='/layouts/main';
   public function filters() {
     return array(
       'accessControl', // perform access control for CRUD operations
@@ -48,9 +48,8 @@ class UserController extends Controller{
   }
   public function actionNew()
   {
-    $user = new User();
-
     if(isset($_POST['username'])&&isset($_POST['user_pass'])&&isset($_POST['user_email'])){
+      $user = new User();
       $attributes = array(
         'username'=>$_POST['username'],
         'user_pass'=>md5('%saltsaltsaltsaltsalt%'.isset($_POST['password']).'%saltsaltsaltsaltsalt%'),
@@ -60,6 +59,9 @@ class UserController extends Controller{
       if($user->save()){
         echo "User Saved";
       }
+    } else {
+      //generate captcha stuff? maybe?
+      $this->render('new');
     }
   }
   public function actionVerify()
