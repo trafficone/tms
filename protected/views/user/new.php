@@ -23,10 +23,10 @@
             <input type="checkbox" id="toc" /></td>
     </tr>
   </table>
-  <?php echo $form->labelEx($model,'verifyCode'); ?>
+  Are you Human?
                 <div>
                 <?php $this->widget('CCaptcha'); ?>
-                <?php echo $form->textField($model,'verifyCode'); ?>
+                <input type="text" name="verifyCode" />
                 </div>
                 <div class="hint">Please enter the letters as they are shown in the image above.
                 <br/>Letters are not case-sensitive.</div>
