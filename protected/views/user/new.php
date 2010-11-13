@@ -26,7 +26,7 @@
             <input type="checkbox" id="toc" /></td>
     </tr>
   </table>
-  Are you Human?
+  Are you Human? Answer this question:
                 <div>
                 <?php $this->widget('CCaptcha'); ?>
                 <input type="text" name="verifyCode" />

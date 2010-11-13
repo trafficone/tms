@@ -1,0 +1,14 @@
+* Create(or find) a solid text/images-based Captcha engine
+  - build it into a controller
+  - create an auth pairing system ie captcha_resp='ball'&captcha_auth=h823h8va89, so auth can happen
+     without the need for storing captcha messages
+* Build out user registration functionality
+  - finish out the controller portion
+  - write in the verification email to send
+  - the verification should be easy, and the email bit should come from the contact page logic
+* Constriuct the profile editing page
+  - build the controller portion
+  - make the forms, and submission ui
+* Build an article cration page
+  - maybe use one of those fancy Javascript WYSIWYG editors 
+  - The controller shouldn't be too complex
