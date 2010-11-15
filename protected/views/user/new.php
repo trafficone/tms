@@ -1,5 +1,5 @@
 <div id="dialog" title="Update">
-  <span class="ui-icon ui-icon-circle-check" style="float:left; margin:0 7px 50px 0;"></span>
+  <span class="ui-icon ui-icon-circle-check" style="float:right; margin:0 7px 50px 0;"></span>
   <span id="dg_message"></span>
 </div>
 <div id="inputs">
@@ -28,8 +28,8 @@
   </table>
   Are you Human? Answer this question:
                 <div>
-                <?php $this->widget('CCaptcha'); ?>
-                <input type="text" name="verifyCode" />
+                <span id="captcha"></span><br />
+                <input type="text" name="verify_code" />
                 </div>
                 <div class="hint">Please enter the letters as they are shown in the image above.
                 <br/>Letters are not case-sensitive.</div>
@@ -40,6 +40,7 @@
 <script language="javascript">
   $(document).ready( function() {
     $("#submit").button();
+    $("#captcha").load("<?php echo $this->createUrl('captcha/getRiddle');?>");
     $("#dialog").dialog({
       autoOpen:false,
       modal:true,
@@ -51,25 +52,34 @@
     });
     $('#submit').click( function() {
       //verify passwords match
-      alert($("#toc").val());
       if($("#pass").val()!=$("#pass_verify").val()){
         $("#dg_message").html('Your passwords do not match');
-        $("#dialog").dialog("show");
+        $("#dialog").dialog("open");
         return false;
-      } else if($("#toc").val()!='checked'){
-    	  $("#dg_message").html('Please read and agree to the Terms and Conditions');
-        $("#dialog").dialog("show");
+      } else if(!$("#toc").is(':checked')){
+    	$("#dg_message").html('Please read and agree to the Terms and Conditions');
+        $("#dialog").dialog("open");
         return false;
       } else {
     	  $("#pass").val($.md5('rocksalt'+$("#pass").val()));
-    	  alert($("#pass").val());
-        $.post("<?php echo $this->createUrl('user/create'); ?>",
+        $.post("<?php echo $this->createUrl('user/new'); ?>",
           $("#createUser").serialize(),
           function(data){
-            $("#inputs").html('User Created, however, you'll have to verify before you are able to login')
+        	$("#pass").val("");
+        	$("#pass_verify").val("");
+            if(data=="User Saved"){
+              $("#inputs").html("User Created, however, you'll have to verify before you are able to login");
+            } else if(data=="User not Verified") {
+              $("#dg_message").html('Verification Failed');
+              $("#dialog").dialog("open");
+            } else {
+            	$("#dg_message").html('User Creation Failed');
+                $("#dialog").dialog("open");
+            }
           }
         );
         return false;
       }
   }); 
+});
 </script>

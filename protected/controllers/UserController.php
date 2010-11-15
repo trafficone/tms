@@ -48,16 +48,29 @@ class UserController extends Controller{
   }
   public function actionNew()
   {
-    if(isset($_POST['username'])&&isset($_POST['user_pass'])&&isset($_POST['user_email'])){
-      $user = new User();
-      $attributes = array(
-        'username'=>$_POST['username'],
-        'user_pass'=>md5('%saltsaltsaltsaltsalt%'.isset($_POST['password']).'%saltsaltsaltsaltsalt%'),
-        'user_email'=>$_POST['user_email']
-      );
-      $user->attributes=$attributes;
-      if($user->save()){
-        echo "User Saved";
+    if(
+      isset($_POST['username'])&&
+      isset($_POST['user_pass'])&&
+      isset($_POST['user_email'])&&
+      isset($_POST['verify_code'])&&
+      isset($_POST['captcha_index'])
+    ){
+      if(file_get_contents('http://'.$_SERVER['SERVER_NAME'].Yii::app()->request->baseUrl.$this->createUrl('captcha/verify').'?response='.$_POST['verify_code'].'&index='.$_POST['captcha_index'])=='true'){
+        $user = new User();
+        $attributes = array(
+          'username'=>$_POST['username'],
+          'user_pass'=>md5('%saltsaltsaltsaltsalt%'.isset($_POST['password']).'%saltsaltsaltsaltsalt%'),
+          'user_email'=>$_POST['user_email'],
+          'user_alias'=>md5(rand(100000,999999))
+        );
+        $user->attributes=$attributes;
+        if($user->save()){
+          $headers="From: {no-reply@devio.us}";
+		  mail($user->user_email,"Please verify your user account",$this->createUrl('user/verify').'?id='.$user->user_id.'&v='.$user->user_alias,$headers);
+          echo "User Saved";
+        }
+      } else {
+        echo "User not Verified";
       }
     } else {
       //generate captcha stuff? maybe?
