@@ -15,6 +15,8 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/custom-theme/jquery-ui-1.8.6.custom.css" />
 	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-ui-1.8.6.custom.min.js"></script>
+  <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.md5.js"></script>
 	
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
@@ -51,8 +53,7 @@
 		All Rights Reserved.<br/>
 		<?php echo Yii::powered(); ?>
 	</div><!-- footer -->
-    <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-ui-1.8.6.custom.min.js"></script>
-    <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.md5.js"></script>
+    
 </div><!-- page -->
 
 
