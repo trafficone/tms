@@ -59,15 +59,17 @@ class UserController extends Controller{
         $user = new User();
         $attributes = array(
           'username'=>$_POST['username'],
-          'user_pass'=>md5('%saltsaltsaltsaltsalt%'.isset($_POST['password']).'%saltsaltsaltsaltsalt%'),
+          'user_pass'=>md5('%saltsaltsaltsaltsalt%'.$_POST['user_pass'].'%saltsaltsaltsaltsalt%'),
           'user_email'=>$_POST['user_email'],
           'user_alias'=>md5(rand(100000,999999))
         );
         $user->attributes=$attributes;
         if($user->save()){
           $headers="From: {no-reply@devio.us}";
-		  mail($user->user_email,"Please verify your user account",$this->createUrl('user/verify').'?id='.$user->user_id.'&v='.$user->user_alias,$headers);
+		      mail($user->user_email,"Please verify your user account",$this->createUrl('user/verify').'?id='.$user->user_id.'&v='.$user->user_alias,$headers);
           echo "User Saved";
+        } else {
+          echo "User not Saved";
         }
       } else {
         echo "User not Verified";

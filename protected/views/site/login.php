@@ -26,7 +26,7 @@ $this->breadcrumbs=array(
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'password'); ?>
-		<?php echo $form->passwordField($model,'password'); ?>
+		<input type="password" name="LoginForm[password]" id="pass" />
 		<?php echo $form->error($model,'password'); ?>
 	</div>
 
@@ -37,14 +37,24 @@ $this->breadcrumbs=array(
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton('Login'); ?>
-                <a href="<?php echo $this->createUrl('user/new');?>">New?</a>
+		<button id='bn_login'>Login</button>
+    <a href="<?php echo $this->createUrl('user/new');?>">New?</a>
 	</div>
 <script language='javascript'>
- var beforeValidate=function(form){
-	 document.login-form.password = $.md5("rocksalt"+document.login-form.password);
-   return true;
- }
+ $(document).ready(function() {
+	 $('#bn_login').button();
+	 $('#bn_login').click( function() {
+		 $('#pass').val($.md5("rocksalt"+$('#pass').val()));
+		 var LoginForm = $('login-form').serializeArray();
+		 $.post("<?php $this->createUrl('site/login') ?>",
+				 LoginForm,
+				 function(data){
+			     alert('you are logged in');
+		    },
+		    'json');
+	 });
+	 return false;
+ });
 </script>
 <?php $this->endWidget(); ?>
 </div><!-- form -->

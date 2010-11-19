@@ -23,7 +23,7 @@
 
 <body>
 
-<div class="container" id="page">
+<div class="container ui-widget" id="page">
 
 	<div id="header">
 		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
