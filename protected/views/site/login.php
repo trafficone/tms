@@ -47,9 +47,9 @@ $this->breadcrumbs=array(
 		 $('#pass').val($.md5("rocksalt"+$('#pass').val()));
 		 var LoginForm = $('login-form').serializeArray();
 		 $.post("<?php $this->createUrl('site/login') ?>",
-				 LoginForm,
-				 function(data){
-			     alert('you are logged in');
+			LoginForm,
+			function(data){
+			  //do something?
 		    },
 		    'json');
 	 });
